@@ -1,0 +1,23 @@
++ '[' 28353188 -gt 6000 ']'
++ '[' -z '' ']'
++ source /software/modules/init/bash
+++ '[' 3.2.10 = '' ']'
+++ MODULE_VERSION_STACK=3.2.10
+++ export MODULE_VERSION_STACK
+++ export -f module
+++ MODULESHOME=/software/modules/3.2.10/Modules/3.2.10
+++ export MODULESHOME
+++ '[' slurm/16.05.9:circ:anaconda/4.4.0:scons/2.5.1:swig/3.0.12:boost/1.62.0/b1:openblas/0.2.19/b1:zmq/4.2.0/b1 = '' ']'
+++ '[' '/software/modules/3.2.10/Modules/versions:/software/modules/3.2.10/Modules/$MODULE_VERSION/modulefiles:/software/modules/3.2.10/Modules/modulefiles' = '' ']'
+++ '[' 4 -ge 3 ']'
+++ '[' -r /software/modules/3.2.10/Modules/3.2.10/init/bash_completion ']'
+++ . /software/modules/3.2.10/Modules/3.2.10/init/bash_completion
++++ complete -o default -F _module module
++ module load circ
+++ /software/modules/3.2.10/Modules/3.2.10/bin/modulecmd bash load circ
++ eval 'sudo()' '{' echo sudo: permission denied - please email circ@rochester.edu for help installing software, etc. ';' echo '>' '/dev/null;};'
++ '[' -n '' ']'
++ cd /scratch/ssur2/feng_WESTPA/dispersed
+++ dirname /scratch/ssur2/feng_WESTPA/dispersed/istates/1/7.gro
++ mkdir -p /scratch/ssur2/feng_WESTPA/dispersed/istates/1
++ cp /scratch/ssur2/feng_WESTPA/dispersed/bstates/state8.gro /scratch/ssur2/feng_WESTPA/dispersed/istates/1/7.gro
