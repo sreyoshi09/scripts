@@ -1,0 +1,17 @@
+#include "/scratch/ssur2/Fengycin_Gromacs/MARTINI_parameters/martini_v2.2P.itp" 
+#include "/scratch/ssur2/Fengycin_Gromacs/MARTINI_parameters/martini_v2.0_ions.itp"
+#include "/scratch/ssur2/Fengycin_Gromacs/MARTINI_parameters/fengycin2.2P.itp"
+#include "/scratch/ssur2/Fengycin_Gromacs/MARTINI_parameters/martini_v2.0_lipids_all_201506.itp"
+
+[ system ]
+FENGYCIN_SINGLE_SCATTERED
+
+[ molecules ]
+FENGYCIN_2.2P   15
+POPC           150
+CHOL	        36
+POPC           150
+CHOL		36
+PW            8352
+NA+             99
+CL-             84
