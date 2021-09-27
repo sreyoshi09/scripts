@@ -1,0 +1,155 @@
+[moleculetype]
+; molname 	nrexcl
+FENGYCIN_2.2P 1 
+
+[atoms]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge
+; threonine
+1   P5     1     THR     BB     1      0    72
+2   Nda    1     THR     SC1    2      0    0
+3   D      1     THR     SC2    3  +0.31    36
+4   D      1     THR     SC3    4  -0.31    36
+; glutamate
+5   P5     1     GLU     BB     1     0	    72 
+6   Qa     1     GLU     SC1    2     0     36 
+7   D      1     GLU     SC2    3  -1.0     36 
+; alanine (P4 type for coil)
+8   P4    3     ALA    BB    1      0    
+; proline (Na type bb for coil)
+9   P5   1     PRO     BB     1      0    
+10  C3   1     PRO     SC1    2      0    
+; glutamine
+11   P5    1     GLN     BB     1      0  72
+12   Nda   1     GLN     SC1    2      0  0
+13   D     1     GLN     SC2    3  +0.46  36
+14   D     1     GLN     SC3    4  -0.46  36
+; tyrosine
+15   P5     6     TYR     BB     1    0
+16   SC4    6     TYR     SC1    2    0  
+17   SC4    6     TYR     SC2    3    0 
+18   SP1    6     TYR     SC3    4    0  
+; isoleucine
+19   P5   7     ILE     BB    1      0    
+20   C1  7     ILE     SC1    2      0    
+; in backbone tyrosine (backwards)
+21   SP1    8     TYR     SC3    1    0
+22   SC4    8     TYR     SC2    2    0  
+23   SC4    8     TYR     SC1    3    0 
+24   P5     8     TYR     BB     4    0
+; ornithine
+25   P5    1     ORN     BB     1      0  72
+26   C3    1     ORN     SC1    2      0  72
+27   Qd    1     ORN     SC2    3      0  36
+28   D     1     ORN     SC3    4    1.0  36
+; glutamate before the fatty acid tail
+29   P5     1     GLU     BB     1     0	    72 
+30   Qa     1     GLU     SC1    2     0     36 
+31   D      1     GLU     SC2    3  -1.0     36 
+
+; polar "glycerol-like" OH before tail
+32   Na     11     TAIL    GL1    1      0 
+; fatty acid tail
+33   C1     11     TAIL    C1A     2       0 
+34   C1     11     TAIL    C2A     3       0 
+35   C1     11     TAIL    C3A     4       0 
+36   C1     11     TAIL    C4A     5       0 
+
+[virtual_sites2]
+; Site from       funct a
+;threonine
+   2     3    4   1     0.5
+;glutamine
+  12    13   14   1     0.5
+
+[bonds]
+;  i     j   funct   length  force.c. 
+; threonine side-chain
+   1     2   1       0.26     9000
+; glutamate side chain
+   5     6   1      0.40      5000
+; proline side-chain 
+   9    10   1       0.30     7500
+; glutamine side-chain
+   11     12    1    0.40     5000 
+; tyrosine side-chain
+   15     16    1        0.32     5000
+
+; in backbone tyrosine "side-chain"
+   24     23   1       0.32     5000 
+; ornithine
+   25     26    1        0.31     5000      
+   26     27    1        0.28     5000 
+; glutamate
+   29     30    1       0.40     5000   
+; bond to and in tail
+  29      32    1       0.47     1250;glu to tail 
+  32      33    1       0.47     1250 
+  33      34    1       0.47     1250 
+  34      35    1       0.47     1250 
+  35      36    1       0.47     1250 
+; backbone bonds (all peptide bonds are ss coiled)
+   1     5    1       0.35     400 
+   1     24   1       0.35     400 ; completes cycle
+   5     8    1       0.35     400 
+   8     9    1       0.35     400 
+   9     11   1       0.35     400 
+   11    15   1       0.35     400 
+   15    19   1       0.35     400 
+   19    21   1       0.35     400 ; bonds to backbone TYR
+   19    22   1       0.35     400 ; bonds to backbone TYR
+   24    25   1       0.35     400 ; bonds cyclic portion to tail
+   25    29   1       0.35     400 
+
+[angles]
+;  i     j    k     funct   angle  force.c.
+; tyrosine side-chain
+    15     16    17       2   150.000   50.0  
+    15     16    18       2   150.000   50.0 
+; in backbone tyrosine "side-chain"
+    24     23    22       2   150.000   50.0  
+    24     23    21       2   150.000   50.0
+; ornithine
+    25     26    27       2   180.000    25.0   
+; tail angles
+    23     25    26       2   180.0      25.0 
+    25     26    27       2   180.0      25.0 
+    26     27    28       2   180.0      25.0 
+    27     28    29       2   180.0      25.0 
+; backbone angles (all in coil, with no dihedrals)
+    1     5     8      2    127    25 ; THR-GLU-ALA
+    5     8    11      2    127    25 ; GLU-ALA-GLN
+    9    11    15      2    127    25 ; ALA-GLN-TYR
+   11    15    19      2    127    25 ; GLN-TYR-ILE
+; backbone angles for cyclic portion to tail
+   24    25    29      2    127    25 ; TYR-ORN-GLU
+   25    29    32      2    127    25 ; ORN-GLU-TAIL
+
+[constraints]
+;  i     j   funct   length 
+; threonine
+   3     4    1       0.28   
+;glutamate
+   6     7    1       0.11   
+;glutamine
+  13    14    1       0.28
+; tyrosine
+   16     17    1      0.27     
+   16     18    1      0.27    
+   17     18    1      0.27   
+; isoleucine
+   19     20    1       0.31       
+; in backbone tyrosine
+   23     22    1       0.27     
+   23     21    1       0.27    
+   22     21    1       0.27  
+;ornithine
+   27    28   1      0.11   
+;glutamate before fatty acid tail
+   30    31   1      0.11
+
+[dihedrals]
+;  i     j    k    l   funct   angle  force.c.
+; tyrosine
+   15     17    18    16       2    0.0    50.0     ; to prevent backflipping of ring
+; in backbone tyrosine
+   24     22    21    23       2    0.0    50.0     ; to prevent backflipping of ring

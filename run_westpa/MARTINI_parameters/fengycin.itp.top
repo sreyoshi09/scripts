@@ -1,0 +1,20 @@
+;
+;	File '../MARTINI_parameters/fengycin.itp.top' was generated
+;	By user: sreyoshi (1003)
+;	On host: byomkesh.biophysics.rochester.edu
+;	At date: Tue Jul 28 15:34:28 2015
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	GROMACS:      gmx pdb2gmx, VERSION 5.0.2
+;	Executable:   /opt/gromacs-5.0.2/bin/gmx
+;	Library dir:  /opt/gromacs-5.0.2/share/gromacs/top
+;	Command line:
+;	  pdb2gmx -f start.pdb -o protein.gro -p ../MARTINI_parameters/fengycin.itp -ignh
+;	Force field was read from the standard Gromacs share directory.
+;
+
+; Include forcefield parameters
+#include "gromos43a1.ff/forcefield.itp"
+

@@ -1,0 +1,23 @@
+;;; ORNITHINE 
+; Simply a lysine with the distance shortened between the first side chain
+; bead and the backbone to make the whole side chain shorter.
+
+[ moleculetype ]
+; molname       nrexcl
+ORN                1
+
+[ atoms ]
+;id type resnr residu atom cgnr   charge
+ 1   P5    1     ORN     BAS    1      0    
+ 2   C3    1     ORN     SI1    2      0    
+ 3   Qd    1     ORN     SI2    3    1.0    
+
+[bonds]
+;  i     j   funct   length  force.c.
+;  1     2    1       0.33     5000
+   1     2    1       0.31     5000      
+   2     3    1       0.28     5000  
+
+[angles]
+;  i     j    k     funct   angle  force.c.
+    1     2    3       2   180.000    25.0      
